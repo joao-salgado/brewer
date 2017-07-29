@@ -15,7 +15,7 @@ import com.salgado.brewer.model.Beer;
 public class BeerController {
 	
 	@RequestMapping("/cervejas/novo")
-	public String newBeer() {
+	public String newBeer(Beer beer) {
 		return "beer/register-beer";
 	}
 	
@@ -23,8 +23,7 @@ public class BeerController {
 	public String register(@Valid Beer beer, BindingResult result, Model model, RedirectAttributes attributes) {
 		
 		if(result.hasErrors()) {
-			model.addAttribute("message", "erro no formulário");
-			return "beer/register-beer";
+			return newBeer(beer);
 		}
 		attributes.addFlashAttribute("message", "salvo com sucesso");
 		return "redirect:/cervejas/novo";
