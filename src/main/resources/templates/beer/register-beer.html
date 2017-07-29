@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	
+	<form method="POST">
+		<span th:text="${message}"></span>
+		<br/>
+		<label>SKU</label>
+		<input type="text" name="sku"/>
+		<br/>
+		<label>Nome</label>
+		<input type="text" name="name"/>
+		<br/>
+		<label>Descrição</label>
+		<input type="text" name="description"/>
+		<br/>
+		
+		<button type="submit" value="Save">Salvar</button>
+	</form>
+	
+</body>
+
+</html>
